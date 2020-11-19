@@ -1,0 +1,40 @@
+    @Override
+    public void start(Stage primaryStage) throws FileNotFoundException {
+
+GridPane pane=new GridPane();
+//pane.setGridLinesVisible(true);
+pane.setAlignment( Pos.CENTER);
+pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
+pane.setHgap(5.5);
+pane.setVgap(5.5);
+
+Image image = new Image("https://picsum.photos/200");
+ImageView imageView=new ImageView(image);
+//imageView.setX(50);
+//imageView.setY(25);
+
+//imageView.setFitHeight(75);
+//imageView.setFitWidth(75);
+imageView.setPreserveRatio(true);
+
+//pane.getChildren().add(imageView);
+pane.add(imageView, 0, 0);
+pane.add(new Label("User Name:"), 0, 1);
+pane.add(new TextField(), 0, 2);
+pane.add(new Label("Password:"), 0, 3);
+pane.add(new TextField(), 0, 5);
+Button btAdd=new Button("Sign in");
+pane.add(btAdd, 0, 6);
+GridPane.setHalignment(btAdd,HPos.RIGHT);
+Scene scene=new Scene(pane, 500, 500);
+primaryStage.setTitle("Java FX Welcome!");
+primaryStage.setScene(scene);
+primaryStage.show();
+}
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
